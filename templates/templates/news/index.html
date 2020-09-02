@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    NEAUOJ首页
+
+    用户注册
+    <form action="{% url 'ojauth:register' %}" method="post">
+        学号
+        <input type="text" name="user_id">
+        姓名
+        <input type="text" name="nick">
+        密码1
+        <input type="text" name="password1">
+        密码2
+        <input type="text" name="password2">
+        邮箱
+        <input type="text" name="email">
+        学校
+        <input type="text" name="school">
+        <input type="submit">
+    </form>
+
+    创建问题
+    <form action="{% url 'cms:create_problem' %}" method="post" enctype="multipart/form-data">
+        标题
+        <input type="text" name="title">
+        描述
+        <input type="text" name="description">
+        输入描述
+        <input type="text" name="input">
+        输出描述
+        <input type="text" name="output">
+        输入样例
+        <input type="text" name="sample_input">
+        输出样例
+        <input type="text" name="sample_output">
+        时间限制
+        <input type="text" name="time_limit" value="1000">
+        空间限制
+        <input type="text" name="memory_limit" value="256">
+        可见还是不可见
+        <input type="radio" name="defunct" value="0">不可见
+        <input type="radio" name="defunct" value="1" checked>可见
+        提示
+        <input type="text" name="hint">
+        是不是特判
+        <input type="radio" name="spj" value="0" checked>不是特判
+        <input type="radio" name="spj" value="1">是特判
+        特判脚本文件
+        <input type="file" name="spj_script">
+        测试数据文件
+        <input type="file" name="test_data">
+        题目来源
+        <input type="text" name="source">
+        <input type="submit">
+    </form>
+
+    创建比赛
+    <form action="{% url 'cms:create_contest' %}" method="post">
+        标题
+        <input type="text" name="title">
+        描述
+        <input type="text" name="description">
+        开始时间
+        <input type="text" name="start_time">
+        结束时间
+        <input type="text" name="end_time">
+        密码
+        <input type="text" name="password">
+        语言掩码
+        <input type="text" name="langmask">
+        可用还是不可用
+        <input type="radio" name="defunct" value="0" checked>可用
+        <input type="radio" name="defunct" value="1">不可用
+        私有还是公有
+        <input type="radio" name="private" value="0" checked>公有
+        <input type="radio" name="private" value="1">私有
+        <input type="submit">
+    </form>
+
+    提交
+    <form action="{% url 'solution:create_solution' %}" method="post">
+        代码
+        <input type="text" name="code">
+        提交人
+        <input type="text" name="user_id" value="A19180183">
+        题目id
+        <input type="text" name="problem_id" value="9">
+        语言
+        <input type="text" name="language" value="0">
+        竞赛
+        <input type="text" name="contest_id" value="0">
+        是竞赛中的第几道题？
+        <input type="text" name="num" value="0">
+        昵称
+        <input type="text" name="nick" value="微机1807李渤">
+        <input type="submit">
+    </form>
+
+    竞赛题目
+    <form action="{% url 'cms:create_contest_problem' %}" method="post">
+        问题id
+        <input type="text" name="problem_id" value="1892">
+        竞赛id
+        <input type="text" name="contest_id" value="1070">
+        标题
+        <input type="text" name="title" value="罗学姐的平衡车">
+        A->0 B C D E
+        <input type="text" name="num" value="A">
+        <input type="submit">
+    </form>
+</body>
+</html>
